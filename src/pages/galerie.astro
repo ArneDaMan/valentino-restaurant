@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Galerie — VALENTINO RESTAURANT Hannover"
+  description="Einblicke ins VALENTINO RESTAURANT: Köstliche Speisen und elegante Atmosphäre in Hannover Sahlkamp."
+>
+<style>
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 4px; }
+  .gallery-item { overflow: hidden; position: relative; }
+  .gallery-item img { width: 100%; height: 280px; object-fit: cover; display: block; transition: transform 0.5s; }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.75)); padding: 1rem; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0; transition: opacity 0.3s; }
+  .gallery-item:hover .caption { opacity: 1; }
+</style>
+
+<section style="padding:5rem 2rem;max-width:1200px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:4rem;">
+    <p style="font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;">Einblicke</p>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;">Galerie</h1>
+    <div style="width:60px;height:1px;background:#C9A84C;margin:0 auto 1.5rem;"></div>
+    <p style="opacity:0.7;max-width:560px;margin:0 auto;">Entdecken Sie unsere Speisen und die Atmosphäre die unsere Gäste so lieben.</p>
+  </div>
+
+  <h2 style="font-size:1.2rem;color:#C9A84C;margin-bottom:1.5rem;letter-spacing:0.1em;">Unsere Spezialitäten</h2>
+  <div class="gallery-grid" style="margin-bottom:3rem;">
+    <div class="gallery-item">
+      <img src="/oktopus.jpg" alt="Gegrillter Oktopus — Hausspecialität Valentino Restaurant Hannover" loading="eager" />
+      <div class="caption">Gegrillter Oktopus — Hausspecialität</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/seafood-platte.jpg" alt="Frische Meeresfrüchte Platte" loading="eager" />
+      <div class="caption">Frische Meeresfrüchte</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/meeresfrüchte.jpg" alt="Meeresfrüchte Spezialität Valentino" loading="lazy" />
+      <div class="caption">Meeresfrüchte Spezialität</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/vorspeise.jpg" alt="Festliche Vorspeisen-Platte" loading="lazy" />
+      <div class="caption">Festliche Vorspeisen-Platte</div>
+    </div>
+  </div>
+
+  <h2 style="font-size:1.2rem;color:#C9A84C;margin-bottom:1.5rem;letter-spacing:0.1em;">Bar & Events</h2>
+  <div class="gallery-grid" style="margin-bottom:3rem;">
+    <div class="gallery-item">
+      <img src="/bar.jpg" alt="Unsere Bar mit Weinauswahl — Valentino Restaurant Hannover" loading="lazy" />
+      <div class="caption">Unsere Bar</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/torte.jpg" alt="Feiern & Events im Valentino Restaurant" loading="lazy" />
+      <div class="caption">Feiern & Events</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;background:#1a1a1a;border:1px solid rgba(201,168,76,0.2);padding:3rem;border-radius:4px;">
+    <p style="font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;">Erleben Sie es selbst</p>
+    <p style="opacity:0.7;margin-bottom:2rem;">Reservieren Sie Ihren Tisch und werden Sie Teil unserer Bilder.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+4917621426137" style="display:flex;align-items:center;gap:0.6rem;background:#C9A84C;color:#0a0a0a;padding:1rem 2rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:0.85rem;border-radius:2px;">📞 Anrufen</a>
+      <a href="https://wa.me/4917621426137" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:0.6rem;background:#25D366;color:white;padding:1rem 2rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;font-size:0.85rem;border-radius:2px;">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>

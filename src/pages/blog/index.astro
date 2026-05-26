@@ -1,0 +1,82 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const posts = [
+  {
+    slug: "moldawische-kueche-hannover",
+    title: "Moldawische Küche in Hannover — was steckt dahinter?",
+    excerpt: "Wenige kennen sie, alle die sie probieren lieben sie: die moldawische Küche. Wir erklären, was sie so besonders macht und welche Gerichte Sie bei uns unbedingt probieren sollten.",
+    date: "15. Mai 2026",
+    category: "Küche & Kultur",
+    readTime: "4 Min.",
+    img: "/placinte-wine.jpg"
+  },
+  {
+    slug: "restaurant-hannover-sahlkamp",
+    title: "Restaurant in Hannover Sahlkamp — Genuss im Norden der Stadt",
+    excerpt: "Der Stadtteil Sahlkamp hat kulinarisch mehr zu bieten als viele denken. Als Restaurant direkt vor Ort kennen wir die Nachbarschaft — und teilen unsere Lieblingsplätze.",
+    date: "3. Mai 2026",
+    category: "Hannover",
+    readTime: "3 Min.",
+    img: "/dining-room.jpg"
+  },
+  {
+    slug: "oktopus-rezept",
+    title: "Gegrillter Oktopus — Geheimnisse unserer Hausspecialität",
+    excerpt: "Der gegrillte Oktopus ist das meistbestellte Gericht bei Valentino. Heute verraten wir, was ihn so besonders macht — und warum gute Vorbereitung der Schlüssel ist.",
+    date: "20. April 2026",
+    category: "Rezepte",
+    readTime: "5 Min.",
+    img: "/oktopus.jpg"
+  },
+];
+---
+<Layout
+  title="Blog — VALENTINO RESTAURANT Hannover | Küche, Kultur & Rezepte"
+  description="Entdecken Sie Rezepte, Hintergrundgeschichten und Tipps rund um moldawische und italienische Küche vom VALENTINO RESTAURANT in Hannover."
+>
+
+<style>
+  /* Keine Standard-Link-Farben — alles in Cream/Gold */
+  a { color: inherit; text-decoration: none; }
+  .post-card { display: block; background: #1a1a1a; border: 1px solid rgba(201,168,76,0.15); border-radius: 4px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; color: #F5F0E8; }
+  .post-card:hover { border-color: rgba(201,168,76,0.45); transform: translateY(-3px); }
+  .post-card img { width: 100%; height: 220px; object-fit: cover; display: block; transition: transform 0.4s; }
+  .post-card:hover img { transform: scale(1.04); }
+  .post-body { padding: 1.5rem; }
+  .post-tag { display: inline-block; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: #C9A84C; background: rgba(201,168,76,0.12); padding: 0.3rem 0.75rem; border-radius: 2px; }
+  .post-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #F5F0E8; margin: 0.75rem 0; line-height: 1.4; }
+  .post-excerpt { font-size: 0.85rem; color: rgba(245,240,232,0.65); line-height: 1.7; margin-bottom: 1.5rem; }
+  .post-meta { font-size: 0.75rem; color: rgba(245,240,232,0.45); }
+  .post-read { font-size: 0.82rem; color: #C9A84C; font-weight: 700; letter-spacing: 0.05em; }
+</style>
+
+<section style="padding:5rem 2rem;max-width:1100px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:4rem;">
+    <p style="font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;">Geschichten & Rezepte</p>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;color:#F5F0E8;">Unser Blog</h1>
+    <div style="width:60px;height:1px;background:#C9A84C;margin:0 auto 1.5rem;"></div>
+    <p style="color:rgba(245,240,232,0.65);max-width:540px;margin:0 auto;">Einblicke in unsere Küche, Kultur und die Welt der Gastronomie.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:2rem;">
+    {posts.map(post => (
+      <a href={`/blog/${post.slug}`} class="post-card">
+        <div style="overflow:hidden;">
+          <img src={post.img} alt={post.title} loading="lazy" />
+        </div>
+        <div class="post-body">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+            <span class="post-tag">{post.category}</span>
+            <span class="post-meta">{post.readTime}</span>
+          </div>
+          <h2 class="post-title">{post.title}</h2>
+          <p class="post-excerpt">{post.excerpt}</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <span class="post-meta">{post.date}</span>
+            <span class="post-read">Weiterlesen →</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

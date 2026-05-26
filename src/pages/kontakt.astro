@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Kontakt & Reservierung — VALENTINO RESTAURANT Hannover"
+  description="VALENTINO RESTAURANT Hannover — Hoppelweg 2, 30657 Hannover. Tel: 0176 21426137. Öffnungszeiten: Fr 17–22 Uhr, Sa & So 12–22 Uhr. Tisch reservieren."
+>
+
+<style>
+  .btn-gold { display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: #C9A84C; color: #0a0a0a; padding: 1.1rem 2rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.9rem; border-radius: 2px; transition: background 0.2s; width: 100%; }
+  .btn-gold:hover { background: #E8C97A; }
+  .btn-wa { display: flex; align-items: center; justify-content: center; gap: 0.75rem; background: #1fad54; color: white; padding: 1.1rem 2rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-size: 0.9rem; border-radius: 2px; border: 1px solid #25D366; transition: background 0.2s; width: 100%; }
+  .btn-wa:hover { background: #25D366; }
+</style>
+
+<section style="padding:5rem 2rem;max-width:900px;margin:0 auto;">
+  <div style="text-align:center;margin-bottom:4rem;">
+    <p style="font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;">Wir freuen uns auf Sie</p>
+    <h1 style="font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem;">Kontakt & Anfahrt</h1>
+    <div style="width:60px;height:1px;background:#C9A84C;margin:0 auto;"></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-bottom:4rem;">
+    <!-- Kontakt -->
+    <div style="background:#1a1a1a;border:1px solid rgba(201,168,76,0.2);padding:2.5rem;border-radius:4px;">
+      <h2 style="font-size:1.3rem;margin-bottom:2rem;color:#C9A84C;">Kontakt</h2>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        <div>
+          <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.4rem;">Adresse</p>
+          <p>Hoppelweg 2</p><p>30657 Hannover</p>
+          <p style="font-size:0.85rem;opacity:0.6;">(Stadtteil Sahlkamp)</p>
+        </div>
+        <div>
+          <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.4rem;">Telefon</p>
+          <a href="tel:+4917621426137" style="color:#C9A84C;font-size:1.1rem;font-weight:700;">0176 21426137</a>
+        </div>
+        <div>
+          <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.4rem;">E-Mail</p>
+          <a href="mailto:valentinovahrenheide@gmail.com" style="color:#C9A84C;font-size:0.85rem;word-break:break-all;">valentinovahrenheide@gmail.com</a>
+        </div>
+        <div>
+          <p style="font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;opacity:0.5;margin-bottom:0.4rem;">Services</p>
+          <p style="font-size:0.85rem;opacity:0.8;">✓ Speisen vor Ort</p>
+          <p style="font-size:0.85rem;opacity:0.8;">✓ Zum Mitnehmen</p>
+          <p style="font-size:0.85rem;opacity:0.8;">✓ Lieferservice</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Öffnungszeiten -->
+    <div style="background:#1a1a1a;border:1px solid rgba(201,168,76,0.2);padding:2.5rem;border-radius:4px;">
+      <h2 style="font-size:1.3rem;margin-bottom:2rem;color:#C9A84C;">Öffnungszeiten</h2>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        {[
+          {day:"Montag", time:"Geschlossen"},
+          {day:"Dienstag", time:"Geschlossen"},
+          {day:"Mittwoch", time:"Geschlossen"},
+          {day:"Donnerstag", time:"Geschlossen"},
+          {day:"Freitag", time:"17:00 – 22:00 Uhr", open:true},
+          {day:"Samstag", time:"12:00 – 22:00 Uhr", open:true},
+          {day:"Sonntag", time:"12:00 – 22:00 Uhr", open:true},
+        ].map(o => (
+          <div style="display:flex;justify-content:space-between;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style={`font-size:0.9rem;${o.open ? '' : 'opacity:0.4;'}`}>{o.day}</span>
+            <span style={`font-size:0.9rem;${o.open ? 'color:#C9A84C;font-weight:700;' : 'opacity:0.35;'}`}>{o.time}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- Reservierung CTA — elegante Buttons -->
+  <div style="text-align:center;background:linear-gradient(135deg,#1a1208,#1a1a1a);border:1px solid rgba(201,168,76,0.3);padding:3.5rem;border-radius:4px;margin-bottom:4rem;">
+    <p style="font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:#C9A84C;margin-bottom:1rem;">Reservierung</p>
+    <h2 style="font-size:2rem;margin-bottom:1rem;">Ihren Tisch reservieren</h2>
+    <p style="opacity:0.7;margin-bottom:2.5rem;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.8;">Rufen Sie uns direkt an oder schreiben Sie uns auf WhatsApp — wir finden den passenden Tisch für Ihren Besuch.</p>
+    <div style="display:flex;flex-direction:column;gap:0.85rem;max-width:340px;margin:0 auto;">
+      <a href="tel:+4917621426137" class="btn-gold">
+        <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:none;stroke:#0a0a0a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        0176 21426137
+      </a>
+      <a href="https://wa.me/4917621426137?text=Guten%20Tag%2C%20ich%20m%C3%B6chte%20einen%20Tisch%20reservieren." target="_blank" rel="noopener" class="btn-wa">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;flex-shrink:0;">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        WhatsApp schreiben
+      </a>
+    </div>
+    <p style="margin-top:1.25rem;font-size:0.8rem;opacity:0.5;">Fr: ab 16 Uhr · Sa & So: ab 11 Uhr erreichbar</p>
+  </div>
+
+  <!-- GOOGLE MAPS eingebettet -->
+  <div style="background:#1a1a1a;border:1px solid rgba(201,168,76,0.2);border-radius:4px;overflow:hidden;">
+    <div style="padding:1.5rem;border-bottom:1px solid rgba(201,168,76,0.1);display:flex;justify-content:space-between;align-items:center;">
+      <h2 style="font-size:1.1rem;">So finden Sie uns</h2>
+      <a href="https://www.google.com/maps/place/VALENTINO+RESTAURANT/@52.4091219,9.7757587,17z" target="_blank" rel="noopener" style="font-size:0.8rem;color:#C9A84C;letter-spacing:0.1em;">In Google Maps öffnen →</a>
+    </div>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2434.5!2d9.7757587!3d52.4091219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00dc1493469eb%3A0x35dc4760971501a7!2sVALENTINO%20RESTAURANT!5e0!3m2!1sde!2sde!4v1"
+      width="100%" height="380" style="border:0;display:block;filter:grayscale(20%);"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="VALENTINO RESTAURANT auf Google Maps">
+    </iframe>
+  </div>
+</section>
